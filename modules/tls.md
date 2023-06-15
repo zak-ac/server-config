@@ -24,10 +24,9 @@ Il est important de noter que lorsqu'on parle de connexions sécurisées, le ter
 | Configuration avancée | Configuration basée sur Certbot | Permet une configuration et personnalisation avancées | Permet une configuration et personnalisation avancées |
 | Environnements       | Convient à la plupart des environnements, y compris les sites web publics | Convient aux environnements privés ou internes | Convient aux environnements privés ou internes |
 
-=========================
 
 ## Configuration de TLS
 
-* [Configuration de TLS avec Let's Encrypt et Nginx](modules/lets-encrypt.md)
-* [Configuration de TLS avec EasyRSA](modules/lets-encrypt.md)
-* [Configuration de TLS avec Certtool](modules/lets-encrypt.md)
+* [Configuration de TLS avec Let's Encrypt et Nginx](lets-encrypt.md)
+* [Configuration de TLS avec EasyRSA](lets-encrypt.md)
+* [Configuration de TLS avec Certtool](lets-encrypt.md)
