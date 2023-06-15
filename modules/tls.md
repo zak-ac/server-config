@@ -1,69 +1,33 @@
-# Configurer Let's Encrypt avec Nginx
+# TLS
 
-Ce guide vous explique comment configurer un certificat SSL/TLS gratuit à l'aide de Let's Encrypt avec Nginx. Le certificat SSL/TLS permet de sécuriser votre site web et de chiffrer les communications entre les utilisateurs et le serveur.
+## TLS - Qu'est-ce que c'est ?
+TLS (Transport Layer Security) est un protocole cryptographique utilisé pour sécuriser les communications sur un réseau. Il permet d'établir des connexions sécurisées et chiffrées entre un client et un serveur, assurant ainsi la confidentialité et l'intégrité des données échangées.
 
-## Prérequis
+## TLS et HTTP
+TLS joue un rôle crucial dans la sécurisation des connexions HTTP (Hypertext Transfer Protocol), communément appelées HTTPS. HTTPS est la version sécurisée de HTTP, où la communication entre le navigateur web du client et le serveur est chiffrée à l'aide de TLS. Ce chiffrement empêche l'accès non autorisé et protège les données contre l'interception ou la falsification.
 
-Avant de commencer, assurez-vous de disposer des éléments suivants :
+## SSL vs TLS
+SSL (Secure Sockets Layer) et TLS (Transport Layer Security) sont tous deux des protocoles cryptographiques utilisés pour des communications sécurisées. Cependant, TLS a largement remplacé SSL en tant que protocole préféré en raison de différentes vulnérabilités découvertes dans SSL.
 
-- Un serveur Debian installé et fonctionnel.
-- Nginx installé sur votre serveur Debian.
+Les versions de TLS ont évolué au fil du temps, avec TLS 1.0, TLS 1.1, TLS 1.2 et TLS 1.3 étant les principales versions. Chaque version apporte des améliorations en termes de sécurité, de performance et de compatibilité.
 
-## Étapes de configuration
+Il est important de noter que lorsqu'on parle de connexions sécurisées, le terme "SSL" est souvent utilisé de manière informelle, mais il implique généralement l'utilisation de TLS.
 
-Suivez les étapes ci-dessous pour configurer Let's Encrypt avec Nginx :
+## Solutions pour la configuration de TLS
 
-1. **Installation de Certbot**
+| Solution             | Let's Encrypt | EasyRSA               | Certtool              |
+|----------------------|---------------|-----------------------|-----------------------|
+| Coût                 | Gratuit       | Gratuit               | Gratuit               |
+| Reconnaissance       | Reconnu par les navigateurs | Certificats auto-signés ou nécessitant une installation manuelle | Certificats auto-signés ou nécessitant une installation manuelle |
+| Automatisation       | Processus de renouvellement automatisé | Processus de gestion manuel | Processus de gestion manuel |
+| Autorité de certification (CA) | Utilise l'autorité de certification Let's Encrypt | Vous pouvez créer votre propre CA | Vous pouvez créer votre propre CA |
+| Configuration avancée | Configuration basée sur Certbot | Permet une configuration et personnalisation avancées | Permet une configuration et personnalisation avancées |
+| Environnements       | Convient à la plupart des environnements, y compris les sites web publics | Convient aux environnements privés ou internes | Convient aux environnements privés ou internes |
 
-   - Utilisez la commande suivante pour installer Certbot :
+=========================
 
-     ```bash
-     sudo apt-get update
-     sudo apt-get install certbot
-     ```
+## Configuration de TLS
 
-2. **Générer le certificat SSL/TLS avec Let's Encrypt**
-
-   - Exécutez la commande suivante pour obtenir et installer automatiquement un certificat :
-
-     ```bash
-     sudo certbot --nginx
-     ```
-
-   - Suivez les instructions à l'écran pour fournir votre adresse e-mail et accepter les termes et conditions.
-
-3. **Configuration de Nginx pour utiliser le certificat**
-
-   - Ouvrez le fichier de configuration de votre site Nginx :
-
-     ```bash
-     sudo nano /etc/nginx/sites-available/votre_site
-     ```
-
-   - Ajoutez les lignes suivantes dans la section du serveur virtuel :
-
-     ```nginx
-     listen 443 ssl;
-     ssl_certificate /etc/letsencrypt/live/votre_site/fullchain.pem;
-     ssl_certificate_key /etc/letsencrypt/live/votre_site/privkey.pem;
-     ```
-
-   - Sauvegardez et fermez le fichier de configuration.
-
-4. **Redémarrage du service Nginx**
-
-   - Redémarrez le service Nginx pour appliquer les modifications :
-
-     ```bash
-     sudo service nginx restart
-     ```
-
-5. **Renouvellement automatique du certificat**
-
-   - Certbot configure automatiquement le renouvellement du certificat avant son expiration. Aucune intervention manuelle n'est nécessaire.
-
-## Informations supplémentaires
-
-- Pour vérifier la validité du certificat, vous pouvez utiliser des outils en ligne ou des extensions de navigateur telles que SSL Labs Server Test ou Let's Encrypt Certificate Expiry Checker.
-- Pour en savoir plus sur l'utilisation de Let's Encrypt avec Nginx, consultez la documentation officielle de Let's Encrypt (https://letsencrypt.org/docs/).
-- N'oubliez pas de surveiller les notifications de renouvellement de certificat pour vous assurer que votre site reste sécurisé.
+* [Configuration de TLS avec Let's Encrypt et Nginx](modules/lets-encrypt.md)
+* [Configuration de TLS avec EasyRSA](modules/lets-encrypt.md)
+* [Configuration de TLS avec Certtool](modules/lets-encrypt.md)
