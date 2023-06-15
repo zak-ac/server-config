@@ -56,6 +56,7 @@ Suivez les étapes ci-dessous pour configurer Let's Encrypt avec Nginx :
 
      ```bash
      sudo service nginx restart
+     #sudo /snap/bin/certbot --nginx
      ```
 
 5. **Renouvellement automatique du certificat**
