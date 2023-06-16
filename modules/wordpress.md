@@ -17,9 +17,9 @@ Ce document fournit une documentation détaillée sur l'installation et la confi
 
    Connectez-vous à votre serveur via SSH et mettez à jour le système en exécutant la commande suivante :
 
-     ```bash
-     sudo apt update && sudo apt upgrade
-     ```
+    ```bash
+    sudo apt update && sudo apt upgrade
+    ```
 
 2. **Installation du serveur web Nginx**
 
@@ -37,34 +37,35 @@ Installez MariaDB, une version populaire de MySQL :
    ```
 Ensuite, sécurisez l'installation de la base de données en exécutant la commande suivante et en répondant "Y" aux options de configuration de sécurité :
 
-     ```bash
-     sudo mysql_secure_installation
-     ```
+   ```bash
+   sudo mysql_secure_installation
+   ```
 4. **Installation de PHP**
 
 Installez PHP FPM (FastCGI Process Manager) pour interpréter les requêtes PHP :
 
-     ```bash
-     sudo mysql_secure_installation
-     ```
+   ```bash
+   sudo mysql_secure_installation
+   ```
 Pour des raisons de sécurité, ouvrez le fichier `/etc/php/7.2/fpm/php.ini` avec un éditeur de texte et modifiez la ligne `fix_pathinfo` comme suit :
 
-     ```bash
-     fix_pathinfo=0
-     ```
+   ```bash
+   fix_pathinfo=0
+   ```
 5. **Installation de WordPress**
 
 Téléchargez et installez la dernière version de WordPress depuis le site officiel :
 
-     ```bash
-    cd /var/www
-    mkdir example.com
-    cd example.com
-    wget https://wordpress.org/latest.tar.gz
-    tar -xzvf latest.tar.gz
-    rm latest.tar.gz
-    cd wordpress
-     ```
+   ```bash
+   cd /var/www
+   mkdir example.com
+   cd example.com
+   wget https://wordpress.org/latest.tar.gz
+   tar -xzvf latest.tar.gz
+   rm latest.tar.gz
+   cd wordpress
+   ```
+
 6. **Configuration de la base de données pour WordPress**
 
 Créez une base de données pour WordPress et un utilisateur avec les privilèges appropriés. Accédez à la ligne de commande MySQL en tapant `mysql` :
