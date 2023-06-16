@@ -25,16 +25,16 @@ Ce document fournit une documentation détaillée sur l'installation et la confi
 
 Utilisez la commande apt pour installer Nginx :
 
-     ```bash
-     sudo apt install nginx
-     ```
+    ```bash
+    sudo apt install nginx
+    ```
 3. **Installation et sécurisation de la base de données**
 
 Installez MariaDB, une version populaire de MySQL :
 
-     ```bash
-     sudo apt install mariadb-server php-mysql
-     ```
+   ```bash
+   sudo apt install mariadb-server php-mysql
+   ```
 Ensuite, sécurisez l'installation de la base de données en exécutant la commande suivante et en répondant "Y" aux options de configuration de sécurité :
 
      ```bash
