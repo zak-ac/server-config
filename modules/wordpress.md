@@ -17,9 +17,9 @@ Ce document fournit une documentation détaillée sur l'installation et la confi
 
    Connectez-vous à votre serveur via SSH et mettez à jour le système en exécutant la commande suivante :
 
-    ```bash
-    sudo apt update && sudo apt upgrade
-    ```
+   ```bash
+   sudo apt update && sudo apt upgrade
+   ```
 
 2. **Installation du serveur web Nginx**
 
@@ -70,19 +70,20 @@ Téléchargez et installez la dernière version de WordPress depuis le site offi
 
 Créez une base de données pour WordPress et un utilisateur avec les privilèges appropriés. Accédez à la ligne de commande MySQL en tapant `mysql` :
 
-     ```sql
-create database example_db default character set utf8 collate utf8_unicode_ci;
-create user 'example_user'@'localhost' identified by 'example_pw';
-grant all privileges on example_db.* TO 'example_user'@'localhost';
-flush privileges;
-     ```
+ ```sql
+ create database example_db default character set utf8 collate utf8_unicode_ci;
+ create user 'example_user'@'localhost' identified by 'example_pw';
+ grant all privileges on example_db.* TO 'example_user'@'localhost';
+ flush privileges;
+ ```
+
 7. **Connexion de WordPress à la base de données**
 
 Faites une copie du fichier de configuration WordPress en utilisant la commande suivante :
 
-     ```bash
-    cp wp-config-sample.php wp-config.php
-     ```
+   ```bash
+   cp wp-config-sample.php wp-config.php
+   ```
 Ouvrez le fichier `wp-config.php` avec un éditeur de texte et modifiez les lignes suivantes en fonction des valeurs que vous avez fournies pour la base de données :
 
     ```bash
