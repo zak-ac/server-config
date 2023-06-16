@@ -6,7 +6,7 @@ Ce document fournit une documentation détaillée sur l'installation et la confi
 
 - Debian
 - Nginx
-- MariaDB
+- MariaDB /MySQL
 - PHP
 
 **Note :** Ce tutoriel utilise `example.com` comme nom de domaine pour l'illustration. Assurez-vous d'avoir un nom de domaine et de configurer l'enregistrement DNS A pour pointer vers l'adresse IP de votre serveur.
@@ -17,17 +17,17 @@ Ce document fournit une documentation détaillée sur l'installation et la confi
 
    Connectez-vous à votre serveur via SSH et mettez à jour le système en exécutant la commande suivante :
 
-   ```bash
+  ```bash
    sudo apt update && sudo apt upgrade
-   ```
+  ```
 
 2. **Installation du serveur web Nginx**
 
 Utilisez la commande apt pour installer Nginx :
 
-    ```bash
-    sudo apt install nginx
-    ```
+  ```bash
+   sudo apt install nginx
+   ```
 3. **Installation et sécurisation de la base de données**
 
 Installez MariaDB, une version populaire de MySQL :
