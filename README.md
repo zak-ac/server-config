@@ -6,7 +6,7 @@ Sommaire
 * [WordPress](modules/wordpress.md)
 * [Fail2ban](modules/fail2ban.md)
 * [Firewall](modules/firewall.md)
-* [nginx](modules/nginx.md)
+* [Nginx](modules/nginx.md)
 * [SSH](modules/ssh.md)
 
 License
